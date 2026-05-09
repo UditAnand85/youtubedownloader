@@ -1,0 +1,31 @@
+[build]
+  # Netlify will serve files from the public/ folder
+  publish = "public"
+
+  # No build command needed — plain HTML + Netlify Functions
+  command = ""
+
+  # Functions directory
+  functions = "netlify/functions"
+
+[functions]
+  # Use ES module format (.mjs) with Node 18
+  node_bundler = "esbuild"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options          = "DENY"
+    X-Content-Type-Options   = "nosniff"
+    Referrer-Policy          = "strict-origin-when-cross-origin"
+    Permissions-Policy       = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/.netlify/functions/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control               = "no-store"

@@ -1,0 +1,6 @@
+# Netlify redirects
+# All /api/* calls are aliased to the Netlify function (optional clean URL)
+/api/download  /.netlify/functions/download  200
+
+# SPA fallback (not strictly needed for this project but good practice)
+/*  /index.html  200
