@@ -1,0 +1,11 @@
+{
+  "name": "youtubedownloader",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo No build needed",
+    "start": "echo Static site"
+  },
+  "dependencies": {}
+}
